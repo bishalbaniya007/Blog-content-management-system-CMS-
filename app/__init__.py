@@ -11,6 +11,8 @@ def create_app(config_class = Config):
 
   db.init_app(app) # Initializes Flask-SQLAlchemy with your application.
 
+  from app import models
+
   migrate.init_app(app, db) # Connects Flask-Migrate to the Flask application and the SQLAlchemy database extension.
   # The app argument tells it which Flask application to work with.
   # The db argument tells it which database metadata and models to use for migration operations.
