@@ -4,6 +4,11 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.extensions import db
 from datetime import datetime, timezone
 from flask_login import UserMixin
+from app.extensions import login_manager
+
+@login_manager.user_loader
+def load_user(user_id):
+    return db.session.get(User, int(user_id))
 
 # association table / Link table
 # It exists because posts and tags have a many-to-many relationship:
@@ -75,6 +80,9 @@ class Tag(db.Model):
   name: Mapped[str] = mapped_column(String(50), unique=True)
 
   posts: Mapped[list["Post"]] = relationship(secondary=post_tags,  back_populates="tags")
+
+
+
 
 
 

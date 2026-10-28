@@ -6,7 +6,7 @@ from app.extensions import db
 from app.models import User
 
 # form for registration
-class RegisterForm(FlaskForm):
+class RegistrationForm(FlaskForm):
   username = StringField(
     "Username",
     validators=[DataRequired(),
@@ -16,7 +16,7 @@ class RegisterForm(FlaskForm):
 
   email = StringField(
     "Email",
-    validatiors=[DataRequired(),
+    validators=[DataRequired(),
                  Email(),
                  Length(max=50)]
   )
