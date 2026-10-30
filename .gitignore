@@ -1,24 +1,30 @@
-# Operating System files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
-# Python environments and caches
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python environments
 venv/
 .venv/
 env/
-__pycache__/
-*.pyc
 
-# IDE / Editor configurations
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local application data
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
 .vscode/
 .idea/
-
-# Environment variables
-.env
-
-instance/

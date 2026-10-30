@@ -8,7 +8,7 @@ from app.extensions import login_manager
 
 @login_manager.user_loader
 def load_user(user_id):
-    return db.session.get(User, int(user_id))
+  return db.session.get(User, int(user_id))
 
 # association table / Link table
 # It exists because posts and tags have a many-to-many relationship:
